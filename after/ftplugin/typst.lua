@@ -1,6 +1,3 @@
--- Wrap
---vim.cmd("SoftWrapMode")
-
 -- Tab-greier
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
