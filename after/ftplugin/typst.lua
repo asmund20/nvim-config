@@ -14,3 +14,7 @@ require 'typst-preview'.setup {
 }
 
 vim.keymap.set("n", "<leader>t", ":TypstPreview<CR>")
+
+-- soft wrap
+vim.opt.wrap = true
+vim.opt.linebreak = true
