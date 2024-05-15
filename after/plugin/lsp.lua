@@ -7,7 +7,7 @@ local cmp_select = {behavior = cmp.SelectBehavior.select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
 	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-	['<C-y>'] = cmp.mapping.confirm({ select = false }),
+	['<C-y>'] = cmp.mapping.confirm({ select = true }),
 	["<C-Space>"] = cmp.mapping.complete(),
 })
 
@@ -35,17 +35,10 @@ require("mason").setup({})
 require('mason-lspconfig').setup({
   -- Replace the language servers listed here
   -- with the ones you want to install
-  ensure_installed = {'rust_analyzer', 'jedi_language_server', 'typst_lsp', 'tinymist'},
+  ensure_installed = {'rust_analyzer', 'jedi_language_server', 'tinymist'},
   handlers = {
     lsp.default_setup,
   }
 })
-
-require('lspconfig').typst_lsp.setup{
-	settings = {
-		exportPdf = "never", -- Choose onType, onSave or never.
-        --serverPath = "", -- Normally, there is no need to uncomment it.
-	}
-}
 
 lsp.setup()
