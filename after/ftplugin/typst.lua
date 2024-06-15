@@ -6,8 +6,6 @@ vim.opt.expandtab = true
 
 -- Compile
 vim.keymap.set("n", "<leader>r", [[:w<Enter>:!typst compile %<CR><CR>]])
--- Debug
-vim.keymap.set("n", "<leader>d", [[:w<Enter>:!typst compile % test.pdf<Enter>:!rm test.pdf]])
 
 
 --typst-preview
